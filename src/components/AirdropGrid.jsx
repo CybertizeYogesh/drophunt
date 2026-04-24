@@ -7,9 +7,27 @@ import { airdropsData } from '../data/airdrops';
 import styles from '../styles/AirdropGrid.module.css';
 
 const ITEMS_PER_PAGE = 12;
+const MOBILE_ITEMS_PER_PAGE = 6;
+const MOBILE_BREAKPOINT = 768;
+const HOME_DESKTOP_COUNT = 8;
+const HOME_MOBILE_COUNT = 4;
 
-export default function AirdropGrid({ activeCategory = 'All', searchQuery = '' }) {
+export default function AirdropGrid({ activeCategory = 'All', searchQuery = '', showViewAll = false }) {
   const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= MOBILE_BREAKPOINT;
+      setIsMobile(mobile);
+      if (showViewAll) {
+        setVisibleCount(mobile ? HOME_MOBILE_COUNT : HOME_DESKTOP_COUNT);
+      } else {
+        setVisibleCount(mobile ? MOBILE_ITEMS_PER_PAGE : ITEMS_PER_PAGE);
+      }
+    };
+    checkMobile();
+  }, [showViewAll]);
 
   const filteredAirdrops = airdropsData.filter(drop => {
     const matchesCategory = activeCategory === 'All' || drop.category === activeCategory;
@@ -19,14 +37,19 @@ export default function AirdropGrid({ activeCategory = 'All', searchQuery = '' }
   });
 
   const displayedAirdrops = filteredAirdrops.slice(0, visibleCount);
+  const loadMoreAmount = isMobile ? MOBILE_ITEMS_PER_PAGE : ITEMS_PER_PAGE;
 
   const handleLoadMore = () => {
-    setVisibleCount(prev => prev + 12);
+    setVisibleCount(prev => prev + loadMoreAmount);
   };
 
   useEffect(() => {
-    setVisibleCount(ITEMS_PER_PAGE);
-  }, [activeCategory, searchQuery]);
+    if (showViewAll) {
+      setVisibleCount(isMobile ? HOME_MOBILE_COUNT : HOME_DESKTOP_COUNT);
+    } else {
+      setVisibleCount(isMobile ? MOBILE_ITEMS_PER_PAGE : ITEMS_PER_PAGE);
+    }
+  }, [activeCategory, searchQuery, isMobile, showViewAll]);
 
   return (
     <section className={styles.airdropSection}>
@@ -65,7 +88,13 @@ export default function AirdropGrid({ activeCategory = 'All', searchQuery = '' }
         ))}
       </div>
 
-      {visibleCount < filteredAirdrops.length && (
+      {showViewAll ? (
+        <div className={styles.loadMoreContainer}>
+          <Link href="/airdrops" className={styles.loadMoreBtn}>
+            View All Airdrops
+          </Link>
+        </div>
+      ) : visibleCount < filteredAirdrops.length && (
         <div className={styles.loadMoreContainer}>
           <button className={styles.loadMoreBtn} onClick={handleLoadMore}>
             View More

@@ -196,18 +196,46 @@
   .footerContent {
     grid-template-columns: 1fr;
     gap: 2rem;
+    text-align: center;
+    align-items: center;
   }
 
-  .brandDescription {
-    max-width: 100%;
+  .brandSection {
+    align-items: center;
   }
 
   .logo img {
     height: 65px;
+    margin: 0 auto;
+  }
+
+  .brandDescription {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .linkColumn {
+    text-align: center;
+  }
+
+  .linkList {
+    align-items: center;
+  }
+
+  .newsletterSection {
+    align-items: center;
+    text-align: center;
   }
 
   .newsletterForm {
     flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0.5rem auto 0;
+  }
+
+  .newsletterInput {
+    text-align: center;
   }
 
   .newsletterBtn {

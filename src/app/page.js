@@ -25,7 +25,7 @@ export default function Home() {
           activeCategory={activeCategory}
           setActiveCategory={setActiveCategory}
         />
-        <AirdropGrid activeCategory={activeCategory} searchQuery={searchQuery} />
+        <AirdropGrid activeCategory={activeCategory} searchQuery={searchQuery} showViewAll />
       </div>
 
 

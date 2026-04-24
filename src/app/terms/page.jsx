@@ -1,9 +1,11 @@
+import Link from 'next/link';
 import styles from '../Legal.module.css';
 
 export default function TermsPage() {
   return (
     <div className={styles.container}>
       <header className={styles.header}>
+        <Link href="/" className={styles.backLink}>← Back to Home</Link>
         <h1 className={styles.title}>Terms of Service</h1>
         <p className={styles.lastUpdated}>Last Updated: April 2026</p>
       </header>
