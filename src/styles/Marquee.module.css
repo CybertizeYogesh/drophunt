@@ -1,0 +1,118 @@
+.marqueeSection {
+  padding: 3rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(10, 15, 26, 0) 0%, rgba(10, 15, 26, 0.5) 50%, rgba(10, 15, 26, 0) 100%);
+}
+
+.marqueeTitle {
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+
+.marqueeWrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeWrapper::before,
+.marqueeWrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeWrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(10, 15, 26, 1), transparent);
+}
+
+.marqueeWrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(10, 15, 26, 1), transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+.ecoItem {
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.15);
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding: 0 2rem;
+  transition: color 0.3s ease;
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(50%);
+}
+
+.logoText {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.ecoItem:hover {
+  color: rgba(0, 210, 255, 0.4);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marqueeSection {
+    padding: 2rem 1.5rem;
+  }
+  .marqueeTitle {
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .ecoItem {
+    font-size: 2rem;
+    padding: 0 1rem;
+    letter-spacing: 1px;
+  }
+  .logoText {
+    font-size: 2rem;
+  }
+  .logo {
+    height: 24px;
+  }
+  .marqueeWrapper::before,
+  .marqueeWrapper::after {
+    width: 50px;
+  }
+}

@@ -1,0 +1,179 @@
+.container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  color: #a0aec0;
+  font-size: 1.1rem;
+}
+
+.formCard {
+  background: #151d2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  color: #a0aec0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.inputGroup input,
+.inputGroup select,
+.inputGroup textarea {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  outline: none;
+  font-family: inherit;
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: #5a6a7e;
+}
+
+.inputGroup select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a0aec0' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.inputGroup select option {
+  background: #151d2e;
+  color: #ffffff;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.inputGroup textarea:focus {
+  border-color: #00d2ff;
+  box-shadow: 0 0 0 3px rgba(0, 210, 255, 0.15);
+}
+
+.inputGroup textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitBtn {
+  display: block;
+  width: 100%;
+  background: #00d2ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 1.2rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 210, 255, 0.4);
+}
+
+.submitBtn:active {
+  transform: translateY(-1px);
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.successMessage h2 {
+  color: #00d2ff;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.successMessage p {
+  color: #a0aec0;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.successMessage strong {
+  color: #ffffff;
+}
+
+.submitAnotherBtn {
+  background: transparent;
+  color: #00d2ff;
+  border: 2px solid #00d2ff;
+  border-radius: 8px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitAnotherBtn:hover {
+  background: #00d2ff;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 2rem auto;
+  }
+
+  .formCard {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .submitBtn {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}

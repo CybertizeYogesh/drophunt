@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DropHunt
+
+A premium Next.js airdrop tracking platform that helps users discover, track, and claim the best crypto airdrops.
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Animation**: Framer Motion
+- **Styling**: CSS Modules
+- **Runtime**: React 19
+
+## Features
+
+- 🔍 **Live Search & Category Filtering** - Filter by Active, Upcoming, Ending Soon, or your Watchlist
+- 📄 **Dynamic Routing** - Individual detail pages for each airdrop with step-by-step guides
+- ❤️ **Watchlist System** - Save favorite airdrops (persisted in localStorage)
+- 📱 **Responsive Design** - Mobile-optimized layout
+- 🔗 **Wallet Connect UI** - Modal for wallet connection
+- 📤 **Share Links** - Copy airdrop detail page URLs to clipboard
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Adding New Airdrops
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Edit `src/data/mockAirdrops.js`. Each airdrop object follows this schema:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```javascript
+{
+  id: 1,                    // Unique number
+  name: "Nebula Network",   // Project name
+  ticker: "NEB",            // Token symbol
+  value: "$50",             // Estimated reward value (or "TBA")
+  tasks: "Social + Testnet", // Required tasks
+  endDate: "2026-05-15",   // End date (YYYY-MM-DD)
+  status: "Active",         // "Active", "Ending Soon", or "Upcoming"
+  image: "/images/project1.svg" // Optional image path
+}
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── page.js              # Home page with airdrop grid
+│   ├── layout.js            # Root layout with metadata
+│   ├── globals.css          # Global styles
+│   ├── submit/page.jsx     # Submit airdrop page
+│   └── airdrop/[id]/       # Dynamic detail pages
+├── components/
+│   ├── AirdropCard.jsx     # Airdrop card with watchlist
+│   ├── FilterBar.jsx       # Category filters & search
+│   ├── Navbar.jsx          # Navigation with wallet connect
+│   ├── Footer.jsx         # Site footer
+│   └── WalletModal.jsx    # Wallet connection modal
+├── hooks/
+│   └── useWatchlist.js     # Watchlist state management
+├── data/
+│   └── mockAirdrops.js     # Airdrop data source
+└── styles/
+    └── *.module.css        # Component-specific styles
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+MIT
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+# Build and deploy to Vercel
+npx vercel --prod
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The platform will be live at your Vercel project URL.

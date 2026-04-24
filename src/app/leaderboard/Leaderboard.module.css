@@ -1,0 +1,136 @@
+.container {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  color: #a0aec0;
+  font-size: 1.1rem;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.table thead {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.table th {
+  padding: 1.25rem 1.5rem;
+  color: #a0aec0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  white-space: nowrap;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table td {
+  padding: 1.25rem 1.5rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.rank {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.topRank {
+  color: #00d2ff;
+}
+
+.projectCell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #00d2ff, #00a8cc);
+  color: #0a0f1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.projectName {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.ticker {
+  color: #a0aec0;
+  font-size: 0.9em;
+  margin-left: 0.25rem;
+}
+
+.network {
+  color: #a0aec0;
+}
+
+.value {
+  font-weight: 700;
+  color: #00d2ff;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 2rem auto;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 1rem;
+  }
+}

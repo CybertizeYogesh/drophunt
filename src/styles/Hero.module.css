@@ -1,0 +1,360 @@
+.hero {
+  background: linear-gradient(180deg, #0a0f1a 0%, #151d2e 100%);
+  padding: 4rem 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.backgroundGlow {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, rgba(138, 43, 226, 0.05) 40%, rgba(10, 15, 26, 0) 70%);
+  filter: blur(90px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  flex: 1;
+  max-width: 600px;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #00d2ff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primaryBtn:hover {
+  background: #00a8cc;
+  transform: translateY(-3px);
+}
+
+.btnIcon {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.scrollHint {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #8b95a5;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.scrollHint:hover {
+  opacity: 0.8;
+}
+
+.bigArrow {
+  display: inline-block;
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+}
+
+.heroRight {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sponsoredWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sponsoredLabel {
+  display: block;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.carouselContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 400px;
+  max-width: 100%;
+  scroll-snap-type: x mandatory;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.sponsoredCard {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+
+/* --- THE ABSOLUTE CENTER LOCKS --- */
+.cardInner {
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center;
+  text-align: center !important;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 320px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cardTopLine {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #4ade80, #22c55e);
+  margin: 0 auto 1.5rem auto;
+  border-radius: 2px;
+}
+
+.cardLogo {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 auto 1rem auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.cardTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.25rem 0;
+  text-align: center;
+}
+
+.cardTicker {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+.cardValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.cardPool {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #4ade80;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.viewDetailsBtn {
+  margin: 1rem auto 0 auto;
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.viewDetailsBtn:hover {
+  background: #00d2ff;
+  color: #fff;
+}
+
+.animateIn .cardLogo,
+.animateIn .cardTitle,
+.animateIn .cardTicker,
+.animateIn .cardValue,
+.animateIn .cardPool {
+  animation: popIn 0.5s ease forwards;
+}
+
+.animateIn .cardLogo { animation-delay: 0.05s; }
+.animateIn .cardTitle { animation-delay: 0.1s; }
+.animateIn .cardTicker { animation-delay: 0.15s; }
+.animateIn .cardValue { animation-delay: 0.2s; }
+.animateIn .cardPool { animation-delay: 0.25s; }
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.carouselButton:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(5px); }
+  60% { transform: translateY(3px); }
+}
+
+@media (max-width: 1024px) {
+  .heroContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .heroLeft {
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 3rem;
+  }
+  .heroTitle { font-size: 2.5rem; }
+  .heroRight {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 2rem 1rem; }
+  .heroContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .heroTitle { font-size: 2rem; text-align: left; }
+  .heroLeft {
+    text-align: left;
+    align-items: flex-start;
+    max-width: 100%;
+  }
+  .heroRight {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .sponsoredWrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .carouselContainer {
+    width: 100%;
+    max-width: 100%;
+  }
+  .carouselTrack { 
+    width: 100%; 
+    max-width: 100%; 
+  }
+  .sponsoredCard {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+  }
+  .cardInner {
+    padding: 1.5rem;
+    min-height: 280px;
+    align-items: center !important;
+    text-align: center !important;
+    width: 100%;
+  }
+  .carouselButton { display: none; }
+  .sponsoredLabel { visibility: visible; opacity: 1; }
+}

@@ -1,0 +1,159 @@
+.main {
+  padding: 3rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contentContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.pageTitle {
+  color: var(--text-main);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pageTitle span {
+  color: var(--accent-cyan);
+}
+
+.featuredSection {
+  margin-bottom: 2.5rem;
+}
+
+.featuredHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.featuredTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.carouselWrapper {
+  position: relative;
+  padding: 0 25px;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0.25rem;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.featuredCard {
+  flex-shrink: 0;
+  width: 320px;
+  scroll-snap-align: start;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(20, 25, 35, 0.9);
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.carouselButton:hover {
+  background: rgba(30, 35, 45, 0.95);
+  color: #fff;
+}
+
+.carouselButtonLeft {
+  composes: carouselButton;
+  left: 0;
+}
+
+.carouselButtonRight {
+  composes: carouselButton;
+  right: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    padding: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .featuredCard {
+    width: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 1.5rem 1rem;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .featuredHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .featuredCard {
+    width: 260px;
+  }
+
+  .carouselButton {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .carouselButtonLeft {
+    left: 5px;
+  }
+
+  .carouselButtonRight {
+    right: 5px;
+  }
+}
