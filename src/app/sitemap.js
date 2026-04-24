@@ -1,5 +1,5 @@
-import { airdropsData } from '@/data/airdrops';
-import { academyModules } from '@/data/academy';
+import { airdropsData } from '../data/airdrops';
+import { academyModules } from '../data/academy';
 
 export default function sitemap() {
   const staticRoutes = [
